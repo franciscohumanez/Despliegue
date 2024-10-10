@@ -4,11 +4,11 @@
 
 Antes de instalar, actualizamos los repositorios `sudo apt update` y después instalamos el paquete `sudo apt install nginx`.
 
-![Instalación del servidor](/img/1.png)
+![Instalación del servidor](img/1.png)
 
 Comprobamos que se ha instaldo y que está funcionando correctamente con el comando `systemctl status nginx`.
 
-![Comprobación de que se ha instalado](/img/2.png)
+![Comprobación de que se ha instalado](img/2.png)
 
 ## Creación de las carpetas del sitio web
 

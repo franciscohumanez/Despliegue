@@ -2,3 +2,6 @@ site_name: My Docs
 site_url: https://franciscohumanez.github.io
 theme:
  name: material
+nav:
+ - Practica2.1: index.md
+ - Practica2.2: practica2.md

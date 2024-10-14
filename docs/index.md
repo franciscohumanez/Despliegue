@@ -148,3 +148,7 @@ Vamos a configurar el archivo de nginx `/etc/nginx/sites-available/default`.
 
 Reiniciamos Nginx `sudo systemctl restart nginx`.
 
+### Resultado
+
+![Pagina web](img/19.png)
+

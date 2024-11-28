@@ -1,0 +1,789 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://franciscohumanez.github.io/">
+      
+      
+      
+        <link rel="next" href="practica2/">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.46">
+    
+    
+      
+        <title>Francisco Javier Humanez Carmona</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#practica-21-instalacion-y-configuracion-de-servidor-web-nginx" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Francisco Javier Humanez Carmona" class="md-header__button md-logo" aria-label="Francisco Javier Humanez Carmona" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Francisco Javier Humanez Carmona
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Practica2.1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Francisco Javier Humanez Carmona" class="md-nav__button md-logo" aria-label="Francisco Javier Humanez Carmona" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Francisco Javier Humanez Carmona
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Practica2.1
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.1
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-del-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación del servidor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-las-carpetas-del-sitio-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de las carpetas del sitio web
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-de-servidor-web-nginx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de servidor web NGINX
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comprobaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprobaciones
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ftp" class="md-nav__link">
+    <span class="md-ellipsis">
+      FTP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurar-servidor-sftp-en-debian" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurar servidor SFTP en debian
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#https" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTPS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTPS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-certificado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de certificado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-nginx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de Nginx
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resultado
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practica2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pracitca3.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practica4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practica5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica2.5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practica6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica3.1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practica7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica3.2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practica8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica3.2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practica9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practica3.3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-del-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación del servidor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-las-carpetas-del-sitio-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de las carpetas del sitio web
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-de-servidor-web-nginx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de servidor web NGINX
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comprobaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprobaciones
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ftp" class="md-nav__link">
+    <span class="md-ellipsis">
+      FTP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurar-servidor-sftp-en-debian" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurar servidor SFTP en debian
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#https" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTPS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTPS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-certificado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de certificado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-nginx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de Nginx
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resultado
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="practica-21-instalacion-y-configuracion-de-servidor-web-nginx">Práctica 2.1 Instalación y configuración de servidor web Nginx</h1>
+<h2 id="instalacion-del-servidor">Instalación del servidor</h2>
+<p>Antes de instalar, actualizamos los repositorios <code>sudo apt update</code> y después instalamos el paquete <code>sudo apt install nginx</code>.</p>
+<p><img alt="Instalación del servidor" src="img/1.png" /></p>
+<p>Comprobamos que se ha instaldo y que está funcionando correctamente con el comando <code>systemctl status nginx</code>.</p>
+<p><img alt="Comprobación de que se ha instalado" src="img/2.png" /></p>
+<h2 id="creacion-de-las-carpetas-del-sitio-web">Creación de las carpetas del sitio web</h2>
+<p>Creamos la carpeta de nuestro sitio web con el comando <code>sudo mkdir -p /var/www/practica2.1/html</code>.</p>
+<p><img alt="Creación de la carpeta" src="img/3.png" /></p>
+<p>Dentro de esta carpeta, clonamos el siguiente repositorio de github:</p>
+<pre><code>https://github.com/cloudacademy/static-website-example
+</code></pre>
+<p><img alt="Propietario de la carpeta" src="img/4.png" /></p>
+<p>Hacemos al usuario <code>www-data</code> propietario de esta carpeta, con el comando</p>
+<pre><code>sudo chown -R www-data:www-data /var/www/nombre_web/html
+</code></pre>
+<p><img alt="Propietario de la carpeta" src="img/5.png" /></p>
+<p>Desde nuestro equipo cliente accedemos a la ip del servidor <code>http://192.168.1.143</code> desde un navegador y debería de salir algo como esto: </p>
+<p><img alt="Propietario de la carpeta" src="img/6.png" /></p>
+<h2 id="configuracion-de-servidor-web-nginx">Configuración de servidor web NGINX</h2>
+<p>Creamos un archivo de configuración que es la página que se muestra si accedemos al servidor sin indicar ningún sitio web.</p>
+<pre><code>sudo nano /etc/nginx/sites-available/practica2.1
+</code></pre>
+<p>En este archivo de configuración, hay que poner lo siguiente:</p>
+<pre><code>server {
+        listen 80;
+        listen [::]:80;
+        root /var/www/practica2.1/html/static-website-example;
+        index index.html index.htm index.nginx-debian.html;
+        server_name nombre_web;
+        location / {
+                try_files $uri $uri/ =404;
+        }
+}
+</code></pre>
+<p><img alt="Configuración del archivo" src="img/7.png" /></p>
+<p>Creamos un archivo simbólico entre este archivo y el de sitios que 
+están habilitados, para que se dé de alta automáticamente 
+con <code>sudo ln -s /etc/nginx/sites-available/practica2.1 /etc/nginx/sites-enabled/</code>.</p>
+<p><img alt="Configuración del archivo" src="img/8.png" /></p>
+<h2 id="comprobaciones">Comprobaciones</h2>
+<p>En nuestra máquina anfitriona tenemos que editar el archivo <code>C:\Windows\System32\drivers\etc\hosts</code>. Y añadir:</p>
+<pre><code>192.168.1.143 practica2.1
+</code></pre>
+<p><img alt="Configuración del archivo" src="img/9.png" /></p>
+<h2 id="ftp">FTP</h2>
+<p>FTP es un protocolo de transferencia de archivos entre sistemas
+conectados a una red TCP. Actualmente, es un protocolo que poco a
+poco va abandonándose, pero ha estado vigente más de 50 años.</p>
+<h2 id="configurar-servidor-sftp-en-debian">Configurar servidor SFTP en debian</h2>
+<p>Primero actualizamos los repositorios <code>sudo apt-get update</code>, después instalamos
+el paquete.</p>
+<pre><code>sudo apt-get install vsftpd
+</code></pre>
+<p>Creamos una carpeta en el home de debian</p>
+<pre><code>mkdir /home/francisco/ftp
+</code></pre>
+<p><img alt="creación carpeta ftp" src="img/10.png" /></p>
+<p>Creamos los certificados de seguridad necesarios para aportar la capa de cifrado a nuestra conexión</p>
+<pre><code>sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/vsftpd.pem -out /etc/ssl/private/vsftpd.pem
+</code></pre>
+<p><img alt="creación carpeta ftp" src="img/11.png" /></p>
+<p>Editamos el archivo de configuración de este servicio <code>sudo nano /etc/vsftpd.conf</code></p>
+<pre><code>rsa_cert_file=/etc/ssl/private/vsftpd.pem
+rsa_private_key_file=/etc/ssl/private/vsftpd.pem
+ssl_enable=YES
+allow_anon_ssl=NO
+force_local_data_ssl=YES
+force_local_logins_ssl=YES
+ssl_tlsv1=YES
+ssl_sslv2=NO
+ssl_sslv3=NO
+require_ssl_reuse=NO
+ssl_ciphers=HIGH
+
+local_root=/home/nombre_usuario/ftp
+</code></pre>
+<p><img alt="creación carpeta ftp" src="img/12.png" /></p>
+<p>Reiniciamoss el servicio para cojer la nueva configuración <code>sudo systemctl restart --now vsftpd</code>.</p>
+<p>Desde el equipo cliente, abrimos el programa filezilla y nos concetamos al servidor Debian. Y subimos un archivo a la carpeta <code>/home/francisco/ftp</code>.</p>
+<p><img alt="subir archivo ftp" src="img/13.png" /></p>
+<p>Desde el Debian ya podemos ver el archivo subido:</p>
+<p><img alt="archivo subido Debian" src="img/14.png" /></p>
+<h2 id="https">HTTPS</h2>
+<p>En este apartado vamos a añadir a nuestro servidor una capa de seguridad necesaria. Haremos que todos nuestros sitios web alojados hagan uso de certificados SSL y se acceda a ellos por medio de HTTPS.</p>
+<h3 id="creacion-de-certificado">Creación de certificado</h3>
+<p>Primero vamos a crear un directorio para almacenar los certificados <code>sudo mkdir /etc/ssl/certificados</code>.</p>
+<p>Generamos la clave privada <code>sudo openssl genpkey -algorithm RSA -out /etc/ssl/certificados/clave_privada.key</code>.</p>
+<p>Y por ultimo generamos un certificado autofirmado <code>sudo openssl req -new -x509 -key /etc/ssl/certificados/clave_privada.key -out /etc/ssl/certificados/certificado_autofirmado.crt -days 365</code>.</p>
+<p><img alt="https" src="img/15.png" /></p>
+<h3 id="configuracion-de-nginx">Configuración de Nginx</h3>
+<p>Vamos a configurar el archivo de nginx <code>/etc/nginx/sites-available/default</code>.</p>
+<p><img alt="configuración https" src="img/16.png" /></p>
+<p>Reiniciamos Nginx <code>sudo systemctl restart nginx</code>.</p>
+<h3 id="resultado">Resultado</h3>
+<p><img alt="Pagina web" src="img/19.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
